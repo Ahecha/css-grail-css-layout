@@ -1,4 +1,4 @@
 
 function testFunction() {
-    window alert("Esta vivo"); 
+    window.alert("Esta vivo"); 
 }
