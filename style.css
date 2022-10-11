@@ -1,26 +1,50 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-family: Dosis, sans-serif;
+  font-family: 'Dosis', sans-serif;
 }
 
 header {
-
+  grid-area: alias-header;
+  background-color: rgba(0, 31, 255, 0.5);
 }
 
 nav {
-
+  grid-area: alias-nav;
+  background-color: rgba(0, 31, 255, 0.8);
+  width: 50px;
+  height: 50px;
+/*  display: none;
+  */
 }
 
 .outer-grid {
+  display: grid;
+  height: 100vH;
+  grid-template-columns: 9% 1fr;
+  grid-template-rows: 10% 1fr;
+  grid-template-areas: "alias-header alias-header"
+                        "alias-inner alias-inner";
+  
+}
 
+.outer-grid-expanded {
+   /* grid-template-areas: "alias-header alias-header"
+                        "alias-nav alias-inner";
+  */
+}
+
+.hide-nav {
+  display: none;
 }
 
 .inner-grid {
-    
+  grid-area: alias-inner;
+  background-color: rgba(0, 31, 255, 0.2);
 }
+
+
