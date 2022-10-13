@@ -7,18 +7,34 @@
 
 html {
   font-family: 'Dosis', sans-serif;
+  color: #1e4040;
 
 }
 
 header {
   grid-area: alias-header;
-  background-color: rgba(0, 31, 255, 0.5);
+  background-color: #1e4040;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4%;
+  color: #71d99e;
 
+}
+
+a {
+  color: #71d99e;
+  text-decoration: none;
+
+}
+
+a:hover {
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 nav {
   grid-area: alias-nav;
-  background-color: rgba(0, 31, 255, 0.8);
+  padding-top: 10%;
   
 }
 
@@ -32,11 +48,14 @@ aside {
   grid-area: alias-aside;
   background-color: rgba(255, 122, 0, 0.4);
   height: 100px;
+
 }
 
 footer {
   grid-area: alias-footer;
-  background-color: rgba(255, 122, 0, 0.7);
+  background-color: #1e4040;
+  color: #71d99e;
+  
 }
 
 .outer-grid {
@@ -55,8 +74,57 @@ footer {
   
 }
 
+.fa-bars {
+  margin-right: 20%;
+  color:#71d99e;
+
+}
+
+.fa-bars:hover, .fa-youtube:hover, .fa-paragraph:hover {
+  cursor: pointer;
+  opacity: 0.5;
+
+}
+
+.link-header1, .link-header2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8%;
+  font-size: 0.8rem;
+  
+}
+
+.left-header {
+  display: flex;
+  align-items: center;
+  
+}
+
+.right-header {
+  display: flex;
+  margin: 2%;
+}
+
 .hide-nav {
   display: none;
+
+}
+
+.link-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-top: 20%;
+
+}
+
+.link-nav:hover {
+  cursor: pointer;
+  opacity: 0.5;
 
 }
 
@@ -81,7 +149,7 @@ display: block;
 
 .outer-grid {
   grid-template-areas: "alias-header alias-header"
-  "alias-nav alias-inner";
+                        "alias-nav alias-inner";
 
 }
 
@@ -95,7 +163,6 @@ display: block;
 @media (min-width: 992px) {
   
   .inner-grid {
-  grid-area: alias-inner;
   background-color: rgba(0, 31, 255, 0.2);
   display: grid;
   grid-template-columns: minmax(auto, 700px) 1fr;
@@ -107,8 +174,43 @@ display: block;
 
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1110px) {
+ 
+  .outer-grid {
+    grid-template-columns: 1fr 40% 1fr;
+    grid-template-areas: "alias-header alias-header alias-header"
+                         "alias-nav alias-inner alias-inner"
+    ;
+  }
+ 
+  header {
+  display: grid;
+  grid-template-columns: 1fr 40% 1fr;
+  grid-template-areas: "alias-lh . alias-rh"
+
+  }
+
   
-}
+
+  .hide-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+
+  .right-header {
+    grid-area: alias-rh;
+    justify-self: start;
+
+  }
+
+  .left-header {
+    grid-area: alias-lh;
+    justify-self: end;
+
+  }
+
+ }
 
 
